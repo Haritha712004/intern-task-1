@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Store E-commerce Platform</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Local Store</h1>
+            <nav>
+                <button onclick="viewCart()">Cart (<span id="cart-count">0</span>)</button>
+            </nav>
+        </header>
+        <main>
+            <section id="product-list">
+                <h2>Products</h2>
+                <div class="product" data-id="1">
+                    <img src="C:\Users\haritha\Downloads\intern task 1\images\choc1.jpeg" alt="Product 1">
+                    <h3>Product 1</h3>
+                    <p>$10.00</p>
+                    <button onclick="addToCart(1)">Add to Cart</button>
+                </div>
+                <div class="product" data-id="2">
+                    <img src="C:\Users\haritha\Downloads\intern task 1\images\choc2.jpeg" alt="Product 2">
+                    <h3>Product 2</h3>
+                    <p>$15.00</p>
+                    <button onclick="addToCart(2)">Add to Cart</button>
+                </div>
+                <!-- Add more products as needed -->
+            </section>
+            <section id="cart" style="display: none;">
+                <h2>Shopping Cart</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Product</th>
+                            <th>Price</th>
+                            <th>Quantity</th>
+                            <th>Total</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="cart-items">
+                        <!-- Cart items will be added here dynamically -->
+                    </tbody>
+                </table>
+                <button onclick="showCheckoutForm()">Checkout</button>
+            </section>
+            <section id="checkout" style="display: none;">
+                <h2>Checkout</h2>
+                <form id="checkout-form">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                    <label for="address">Address:</label>
+                    <input type="text" id="address" name="address" required>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                    <button type="button" onclick="processCheckout()">Submit Order</button>
+                </form>
+            </section>
+        </main>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+</html>
